@@ -22,6 +22,7 @@ const isAdmin = (req, res, next) => {
     req.userId = decoded.userId;
     next();
   } catch (err) {
+    console.log("JWT Error Details: ", err.message);
     return res.status(500).json({
       message: "authAdmin Error",
     });
